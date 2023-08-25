@@ -1,38 +1,183 @@
-.App {
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for the app */
+.app {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  grid-gap: 20px;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  text-align: center;
+  background-color: #fde5e5;
+  color: white;
+  padding: 10px 0;
+}
+
+/* Navigation */
+nav {
+  grid-area: nav;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+
+  grid-area: header;
+  text-align: center;
+  background-color: #949694;
+  color: white;
+  padding: 10px 0;
+}
+
+nav li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+/* Main Content */
+.book-list,
+.book-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Book List */
+.book-list {
+  grid-area: main;
+}
+
+.book-list h2 {
+  margin-bottom: 10px;
+}
+
+.book-list ul {
+  list-style: none;
+}
+
+.book-list li {
+  margin-bottom: 5px;
+}
+
+/* Book Details */
+.book-details {
+  grid-area: main;
+  /* display: none; */
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  text-align: center;
+  background-color: #949694;
+  color: white;
+  padding: 10px 0;
+}
+
+/* BookStall.css */
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.book-stall {
+  display: flex;
+  align-items: center; /* Vertically align items */
+}
+
+.logo1 {
+  max-width: 100%;
+  height: auto;
+  width: 100%; /* Use a percentage value */
+}
+
+.image-container {
+  max-width: 100%; /* Adjust this value to your layout needs */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Style for the login form */
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Style for the form headings */
+.auth-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for form inputs */
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Style for form button */
+.auth-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .auth-form {
+    max-width: 90%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  /* Apply responsive styling for screens up to 768px wide */
+  .book-stall {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text in the vertical layout */
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo {
+    margin-bottom: 10px; /* Add some spacing between logo and heading */
   }
 }
